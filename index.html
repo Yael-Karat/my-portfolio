@@ -65,15 +65,12 @@
         const repos = await response.json();
         const repoGrid = document.getElementById("repo-grid");
         repoGrid.innerHTML = "";
-
         repos.forEach(repo => {
           const card = document.createElement("article");
           card.className = `
             group relative rounded-3xl overflow-hidden soft-shadow border border-white/10
             card-gradient-animated
           `;
-
-
           card.innerHTML = `
             <div class="h-40 bg-gradient-to-br from-indigo-600/40 to-fuchsia-600/30"></div>
             <div class="p-5">
@@ -83,7 +80,9 @@
                 ${repo.language ? `<span class="tag">${repo.language}</span>` : ""}
               </div>
               <div class="mt-4 flex gap-3">
-                <a href="${repo.html_url}" target="_blank" class="btn btn-glass"><i data-lucide="github"></i>Code</a>
+                <a href="${repo.html_url}" target="_blank" class="btn btn-glass flex items-center gap-2">
+                  <i data-lucide="github" class="w-5 h-5 text-white"></i>Code
+                </a>
               </div>
             </div>
           `;
@@ -115,11 +114,13 @@
           <a href="#contact" class="hover:text-white/90">Contact</a>
         </div>
         <div class="flex items-center gap-2">
-          <button class="btn btn-glass" onclick="toggleTheme()" title="Toggle theme">
-            <i data-lucide="sun"></i>
+          <button class="btn btn-glass flex items-center gap-2" onclick="toggleTheme()" title="Toggle theme">
+            <i data-lucide="sun" class="w-5 h-5 text-white"></i>
             <span class="hidden sm:inline">Theme</span>
           </button>
-          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#projects" class="btn btn-primary flex items-center gap-2">
+            <i data-lucide="eye" class="w-5 h-5 text-white"></i>View Projects
+          </a>
         </div>
       </div>
     </nav>
@@ -140,10 +141,10 @@
           Software developer with a B.Sc. in Computer Science. I love creating fast, accessible experiences with React, Python, and automation - and turning complex data into clear insights.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#contact" class="btn btn-primary"><i data-lucide="send"></i>Contact Me</a>
-          <a href="#resume" class="btn btn-glass"><i data-lucide="download"></i>Download Resume</a>
-          <a href="https://github.com/Yael-Karat" target="_blank" class="btn btn-glass"><i data-lucide="github"></i>GitHub</a>
-          <a href="https://www.linkedin.com/in/yael-karat" target="_blank" class="btn btn-glass"><i data-lucide="linkedin"></i>LinkedIn</a>
+          <a href="#contact" class="btn btn-primary flex items-center gap-2"><i data-lucide="send" class="w-5 h-5 text-white"></i>Contact Me</a>
+          <a href="#resume" class="btn btn-glass flex items-center gap-2"><i data-lucide="download" class="w-5 h-5 text-white"></i>Download Resume</a>
+          <a href="https://github.com/Yael-Karat" target="_blank" class="btn btn-glass flex items-center gap-2"><i data-lucide="github" class="w-5 h-5 text-white"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/yael-karat" target="_blank" class="btn btn-glass flex items-center gap-2"><i data-lucide="linkedin" class="w-5 h-5 text-white"></i>LinkedIn</a>
         </div>
       </div>
       <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="100">
@@ -162,7 +163,7 @@
                   <span class="tag">Tailwind</span>
                 </div>
                 <a href="https://github.com/Yael-Karat/truthlens" target="_blank" class="mt-5 inline-flex items-center gap-2 text-indigo-300 hover:text-indigo-200 font-medium">
-                  View on GitHub <i data-lucide="arrow-up-right"></i>
+                  View on GitHub <i data-lucide="arrow-up-right" class="w-5 h-5 text-white"></i>
                 </a>
               </div>
             </div>
@@ -222,7 +223,7 @@
     </div>
   </section>
 
-  <!-- Skills -->
+    <!-- Skills -->
   <section id="skills" class="py-20 bg-gray-900">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold tracking-tight text-white mb-2">Skills & Technologies</h2>
@@ -243,7 +244,6 @@
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thymeleaf/thymeleaf-original.svg" alt="Thymeleaf">
           </div>
         </div>
 
@@ -254,7 +254,7 @@
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/npm/simple-icons@7/icons/tailwindcss.svg" alt="Tailwind CSS">
           </div>
         </div>
 
