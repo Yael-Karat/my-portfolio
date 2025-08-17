@@ -223,33 +223,61 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-20">
+  <section id="skills" class="py-20 bg-gray-900">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold tracking-tight">Skills & Technologies</h2>
-      <p class="mt-3 text-slate-300/90">A quick overview of the tools I use frequently.</p>
-      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="glass glass-dark rounded-3xl p-6">
-          <h3 class="font-semibold mb-3 flex items-center gap-2"><i data-lucide="monitor-smartphone"></i>Frontend</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Tailwind</span>
+      <h2 class="text-3xl font-extrabold tracking-tight text-white mb-2">Skills & Technologies</h2>
+      <p class="text-slate-300/90 mb-8">A quick overview of the tools I use frequently.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Languages & Frameworks -->
+        <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
+          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="code"></i>Languages & Frameworks</h3>
+          <div class="flex flex-wrap justify-center gap-4">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/thymeleaf/thymeleaf-original.svg" alt="Thymeleaf">
           </div>
         </div>
-        <div class="glass glass-dark rounded-3xl p-6">
-          <h3 class="font-semibold mb-3 flex items-center gap-2"><i data-lucide="server"></i>Backend</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">REST</span><span class="tag">Auth</span>
+
+        <!-- Web & UI -->
+        <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
+          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="monitor-smartphone"></i>Web & UI</h3>
+          <div class="flex flex-wrap justify-center gap-4">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS">
           </div>
         </div>
-        <div class="glass glass-dark rounded-3xl p-6">
-          <h3 class="font-semibold mb-3 flex items-center gap-2"><i data-lucide="database"></i>Data</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">SQL</span><span class="tag">DuckDB</span><span class="tag">SQLite</span><span class="tag">Pandas</span>
+
+        <!-- Databases -->
+        <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
+          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="database"></i>Databases</h3>
+          <div class="flex flex-wrap justify-center gap-4">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/duckdb/duckdb-original.svg" alt="DuckDB">
           </div>
         </div>
-        <div class="glass glass-dark rounded-3xl p-6">
-          <h3 class="font-semibold mb-3 flex items-center gap-2"><i data-lucide="beaker"></i>Testing</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">PyTest</span><span class="tag">Selenium</span><span class="tag">CI/CD</span>
+
+        <!-- Testing & DevOps -->
+        <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
+          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="beaker"></i>Testing & Tools</h3>
+          <div class="flex flex-wrap justify-center gap-4">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Test Automation">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+            <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
           </div>
         </div>
       </div>
