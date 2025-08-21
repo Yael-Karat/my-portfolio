@@ -82,9 +82,18 @@ python -m http://127.0.0.1:5500/index.html
 ## 📂 Project Structure
 
 ```
-portfolio/
+my-portfolio/
+│
 ├─ index.html
-├─ Yael Karat CV.pdf
+├─ css/
+│   └─ style.css
+├─ js/
+│   └─ main.js
+├─ assets/
+│   └─ images/
+│       └─ my_photo.jpeg
+├─ pdf/
+│   └─ Yael Karat CV.pdf
 └─ README.md
 ```
 
