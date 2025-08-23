@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yael Karat - Portfolio</title>
+  <title>Yael Karat</title>
   <meta name="description" content="Portfolio website for Yael Karat - Software Developer (Web, Python, Test Automation)." />
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,9 @@
 
   <!-- TailwindCSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
 
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -23,33 +26,46 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-animated text-slate-200 selection:bg-indigo-500/40">
+<body class="bg-slate-50 text-slate-900 selection:bg-indigo-500/40 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
 
-  <!-- Blobs Background -->
-  <div class="blob"></div>
-  <div class="blob"></div>
-  <div class="blob"></div>
+  <!-- Background Blobs -->
+  <div class="blob bg-indigo-400"></div>
+  <div class="blob bg-emerald-400"></div>
+  <div class="blob bg-fuchsia-400"></div>
 
   <!-- Navbar -->
   <header class="fixed inset-x-0 top-0 z-50">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-      <div class="glass glass-dark soft-shadow rounded-2xl px-4 py-3 flex items-center justify-between">
-        <a href="#home" class="flex items-center gap-3">
-          <span class="font-semibold tracking-tight">Yael Karat</span>
-        </a>
+      <div class="glass glass-dark soft-shadow rounded-2xl px-4 py-3 flex items-center justify-between bg-white/70 dark:bg-slate-800/70 transition-colors duration-300">
+        <a href="#home" class="flex items-center gap-3 font-semibold tracking-tight">Yael Karat</a>
         <div class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#about" class="hover:text-white/90">About</a>
-          <a href="#projects" class="hover:text-white/90">Projects</a>
-          <a href="#skills" class="hover:text-white/90">Skills</a>
-          <a href="#resume" class="hover:text-white/90">Resume</a>
-          <a href="#contact" class="hover:text-white/90">Contact</a>
+          <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+          <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Projects</a>
+          <a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Skills</a>
+          <a href="#resume" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Resume</a>
+          <a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
         </div>
         <div class="flex items-center gap-2">
-          <button id="theme-toggle" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 border border-white/20 text-white/90 hover:text-white bg-white/5 backdrop-blur" title="Toggle theme">
-            <i data-lucide="sun" class="w-5 h-5"></i>
-            <span class="hidden sm:inline">Theme</span>
+          <!-- Theme toggle button -->
+          <button id="theme-toggle"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-700/70 backdrop-blur transition transform hover:-translate-y-0.5 active:translate-y-0"
+            title="Toggle theme">
+
+            <!-- Sun icon (only visible in light mode) -->
+            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-amber-500 dark:hidden" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 4.5a1 1 0 0 1 1-1h.01a1 1 0 1 1-2 0h.01a1 1 0 0 1 1 1zm6.364 1.636a1 1 0 0 1 1.414 1.414l-.007.007a1 1 0 1 1-1.414-1.414l.007-.007zM19.5 12a1 1 0 0 1 1-1v.01a1 1 0 1 1 0 2V13a1 1 0 0 1-1-1zm-1.636 6.364a1 1 0 0 1 1.414-1.414l.007.007a1 1 0 1 1-1.414 1.414l-.007-.007zM12 19.5a1 1 0 0 1-1-1h.01a1 1 0 1 1 2 0H13a1 1 0 0 1-1 1zm-6.364-1.636a1 1 0 0 1-1.414-1.414l.007-.007a1 1 0 1 1 1.414 1.414l-.007.007zM4.5 12a1 1 0 0 1-1 1v-.01a1 1 0 1 1 0-2V11a1 1 0 0 1 1 1zm1.636-6.364a1 1 0 0 1-1.414-1.414l.007-.007a1 1 0 1 1 1.414 1.414l-.007.007zM12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7z"/>
+            </svg>
+
+            <!-- Moon icon (only visible in dark mode) -->
+            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-blue-400 hidden dark:block" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79z"/>
+            </svg>
+
+            <span class="hidden sm:inline" data-theme-label>Theme</span>
           </button>
-          <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 bg-indigo-600 text-white hover:bg-indigo-500">
+          <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium bg-indigo-600 text-white transition transform hover:-translate-y-0.5 active:translate-y-0">
             <i data-lucide="eye" class="w-5 h-5"></i>View Projects
           </a>
         </div>
@@ -61,44 +77,40 @@
   <section id="home" class="pt-36 pb-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-8 items-center">
       <div class="lg:col-span-7" data-aos="fade-up">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 text-xs text-white/80 mb-4 bg-white/5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-300 dark:border-slate-600 text-xs text-slate-700 dark:text-slate-300 mb-4 bg-white/60 dark:bg-slate-700/60">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           Available for opportunities
         </div>
         <div class="text-center">
-          <h2 class="text-4xl sm:text-5xl lg:text-3xl leading-tight tracking-tight">
-            Hi, I'm
-          </h2>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-            Yael Karat
-          </h1>
-          <h2 class="text-4xl sm:text-5xl lg:text-3xl font-extrabold leading-tight tracking-tight">
-            Software developer
-          </h2>
+          <h2 class="text-4xl sm:text-5xl lg:text-4xl font-semibold leading-tight tracking-tight">Hi, I'm</h2>
+          <h1 class="text-5xl sm:text-6xl lg:text-6xl font-extrabold leading-tight tracking-tight">Yael Karat</h1>
+          <h2 class="text-4xl sm:text-5xl lg:text-4xl font-extrabold leading-tight tracking-tight text-indigo-600 dark:text-indigo-400">Software Developer</h2>
         </div>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 bg-indigo-600 text-white hover:bg-indigo-500"><i data-lucide="send" class="w-5 h-5"></i>Contact Me</a>
-          <a href="#resume" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 border border-white/20 text-white/90 hover:text-white bg-white/5 backdrop-blur"><i data-lucide="download" class="w-5 h-5"></i>Download Resume</a>
-          <a href="https://github.com/Yael-Karat" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 border border-white/20 text-white/90 hover:text-white bg-white/5 backdrop-blur"><i data-lucide="github" class="w-5 h-5"></i>GitHub</a>
-          <a href="https://www.linkedin.com/in/yael-karat" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 border border-white/20 text-white/90 hover:text-white bg-white/5 backdrop-blur"><i data-lucide="linkedin" class="w-5 h-5"></i>LinkedIn</a>
+        <div class="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start">
+          <a href="#contact" class="btn-glass border inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-700/70 text-slate-700 dark:text-slate-200 backdrop-blur transition transform hover:-translate-y-0.5 active:translate-y-0"><i data-lucide="send" class="w-5 h-5"></i>Contact Me</a>
+          <a href="#resume" class="btn-glass border inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-700/70 text-slate-700 dark:text-slate-200 backdrop-blur transition transform hover:-translate-y-0.5 active:translate-y-0"><i data-lucide="download" class="w-5 h-5"></i>Download Resume</a>
+          <a href="https://github.com/Yael-Karat" target="_blank" class="btn-glass border inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-700/70 text-slate-700 dark:text-slate-200 backdrop-blur transition transform hover:-translate-y-0.5 active:translate-y-0"><i data-lucide="github" class="w-5 h-5"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/yael-karat" target="_blank" class="btn-glass border inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-700/70 text-slate-700 dark:text-slate-200 backdrop-blur transition transform hover:-translate-y-0.5 active:translate-y-0"><i data-lucide="linkedin" class="w-5 h-5"></i>LinkedIn</a>
         </div>
       </div>
+
+      <!-- Hero Project Card -->
       <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="100">
         <div class="relative">
           <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-3xl blur opacity-50"></div>
           <div class="relative glass glass-dark rounded-3xl p-6 soft-shadow">
-            <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 grid place-items-center border border-white/10">
+            <div class="aspect-[4/3] rounded-2xl bg-slate-100 dark:bg-slate-900 grid place-items-center border border-slate-200 dark:border-slate-700">
               <div class="text-center px-6">
-                <p class="text-sm text-white/70 mb-2">Featured Project</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mb-2">Featured Project</p>
                 <h3 class="text-2xl font-bold">TruthLens</h3>
-                <p class="text-white/80 mt-2">AI-powered tool to detect misinformation and bias in social media posts (Flask + React).</p>
-                <div class="mt-4 flex justify-center gap-2">
-                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs border border-white/15 text-white/80 bg-white/5">AI</span>
-                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs border border-white/15 text-white/80 bg-white/5">Flask</span>
-                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs border border-white/15 text-white/80 bg-white/5">React</span>
-                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs border border-white/15 text-white/80 bg-white/5">Tailwind</span>
+                <p class="mt-2 text-slate-700 dark:text-slate-300">AI-powered tool to detect misinformation and bias in social media posts (Flask + React).</p>
+                <div class="mt-4 flex justify-center gap-2 flex-wrap">
+                  <span class="px-3 py-1 rounded-full text-xs border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700">AI</span>
+                  <span class="px-3 py-1 rounded-full text-xs border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700">Flask</span>
+                  <span class="px-3 py-1 rounded-full text-xs border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700">React</span>
+                  <span class="px-3 py-1 rounded-full text-xs border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700">Tailwind</span>
                 </div>
-                <a href="https://github.com/Yael-Karat/truthlens" target="_blank" class="mt-5 inline-flex items-center gap-2 text-indigo-300 hover:text-indigo-200 font-medium">
+                <a href="https://github.com/Yael-Karat/truthlens" target="_blank" class="mt-5 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:underline">
                   View on GitHub <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                 </a>
               </div>
@@ -110,8 +122,8 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section id="about" class="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-5" data-aos="fade-right">
           <div class="relative">
@@ -149,28 +161,31 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-20">
+  <section id="projects" class="py-20 bg-slate-50/80 dark:bg-slate-800/80 backdrop-blur transition-colors duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between mb-8">
         <h2 class="text-3xl font-extrabold tracking-tight">Projects</h2>
-        <a href="https://github.com/Yael-Karat" target="_blank" class="text-sm text-indigo-300 hover:text-indigo-200 inline-flex items-center gap-1">All on GitHub <i data-lucide="arrow-up-right"></i></a>
+        <a href="https://github.com/Yael-Karat" target="_blank"
+           class="text-sm text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center gap-1">
+           All on GitHub <i data-lucide="arrow-up-right"></i>
+        </a>
       </div>
       <div id="repo-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Repos will load dynamically here -->
+        <!-- GitHub repos load here -->
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-20 bg-gray-900">
+  <section id="skills" class="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold tracking-tight text-white mb-2">Skills & Technologies</h2>
+      <h2 class="text-3xl font-extrabold tracking-tight">Skills & Technologies</h2>
       <p class="text-slate-300/90 mb-8">A quick overview of the tools I use frequently.</p>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Languages & Frameworks -->
         <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
-          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="code"></i>Languages & Frameworks</h3>
+          <h3 class="font-semibold mb-4 flex items-center gap-2"><i data-lucide="code"></i>Languages & Frameworks</h3>
           <div class="flex flex-wrap justify-center gap-4">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
@@ -187,7 +202,7 @@
 
         <!-- Web & UI -->
         <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
-          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="monitor-smartphone"></i>Web & UI</h3>
+          <h3 class="font-semibold mb-4 flex items-center gap-2"><i data-lucide="monitor-smartphone"></i>Web & UI</h3>
           <div class="flex flex-wrap justify-center gap-4">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
@@ -198,7 +213,7 @@
 
         <!-- Databases -->
         <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
-          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="database"></i>Databases</h3>
+          <h3 class="font-semibold mb-4 flex items-center gap-2"><i data-lucide="database"></i>Databases</h3>
           <div class="flex flex-wrap justify-center gap-4">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
@@ -209,7 +224,7 @@
 
         <!-- Testing & Tools -->
         <div class="glass glass-dark rounded-3xl p-6 flex flex-col items-center">
-          <h3 class="font-semibold mb-4 flex items-center gap-2 text-white"><i data-lucide="beaker"></i>Testing & Tools</h3>
+          <h3 class="font-semibold mb-4 flex items-center gap-2"><i data-lucide="beaker"></i>Testing & Tools</h3>
           <div class="flex flex-wrap justify-center gap-4">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">
             <img class="h-10 w-10" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Test Automation">
@@ -223,11 +238,11 @@
   </section>
 
   <!-- Resume Section -->
-  <section id="resume" class="py-20">
+  <section id="resume" class="py-20 bg-slate-50 dark:bg-slate-800 transition-colors duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between mb-6">
         <h2 class="text-3xl font-extrabold tracking-tight">Resume</h2>
-        <a href="pdf/Yael Karat CV.pdf" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium bg-indigo-600 text-white hover:bg-indigo-500 transition">
+        <a href="pdf/Yael Karat CV.pdf" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium bg-indigo-600 text-white transition">
           <i data-lucide="download" class="w-5 h-5"></i>Download PDF
         </a>
       </div>
@@ -238,7 +253,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20">
+  <section id="contact" class="py-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur transition-colors duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-8 items-start">
         <div class="lg:col-span-5" data-aos="fade-right">
@@ -261,21 +276,27 @@
               <label class="block" for="name">
                 <span class="text-sm text-slate-300/80">Name</span>
                 <input id="name" name="name" required 
-                  class="mt-1 w-full rounded-xl bg-slate-900/60 border border-white/10 
-                        px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-500" />
+                  class="mt-1 w-full rounded-xl bg-white dark:bg-slate-900/60 
+                        border border-slate-300 dark:border-white/10 
+                        px-4 py-2.5 text-slate-900 dark:text-slate-100
+                        outline-none focus:ring-2 focus:ring-indigo-500" />
               </label>
               <label class="block" for="email">
                 <span class="text-sm text-slate-300/80">Email</span>
                 <input id="email" name="email" type="email" required 
-                  class="mt-1 w-full rounded-xl bg-slate-900/60 border border-white/10 
-                        px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-500" />
+                  class="mt-1 w-full rounded-xl bg-white dark:bg-slate-900/60 
+                        border border-slate-300 dark:border-white/10 
+                        px-4 py-2.5 text-slate-900 dark:text-slate-100
+                        outline-none focus:ring-2 focus:ring-indigo-500" />
               </label>
             </div>
             <label class="block" for="message">
               <span class="text-sm text-slate-300/80">Message</span>
               <textarea id="message" name="message" rows="5" required 
-                class="mt-1 w-full rounded-xl bg-slate-900/60 border border-white/10 
-                      px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                  class="mt-1 w-full rounded-xl bg-white dark:bg-slate-900/60 
+                        border border-slate-300 dark:border-white/10 
+                        px-4 py-2.5 text-slate-900 dark:text-slate-100
+                        outline-none focus:ring-2 focus:ring-indigo-500" ></textarea>
             </label>
 
             <!-- Success & error messages -->
@@ -312,11 +333,8 @@
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="py-10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-slate-400/80 text-sm">
-      <p>© <span id="year"></span> Yael Karat. Crafted with ❤️ using Tailwind.</p>
-    </div>
+  <footer class="py-10 bg-slate-100 dark:bg-slate-800 text-center text-slate-600 dark:text-slate-400 transition-colors duration-300">
+    <p>© <span id="year"></span> Yael Karat. Crafted with ❤️ using Tailwind.</p>
   </footer>
 
   <!-- Scripts -->
