@@ -1,6 +1,6 @@
 # Yael Karat - Portfolio Website
 
-![My photo](./images\my_photo.jpeg)
+![My photo](./public/images/my_photo.jpeg)
 
 ---
 
@@ -71,12 +71,13 @@ my-portfolio/
 │
 ├─ css/
 │   └─ style.css
-├─ images/
-│   └─ my_photo.jpeg
 ├─ js/
 │   └─ main.js
 ├─ pdf/
 │   └─ Yael Karat CV.pdf
+├─ public/
+│   └─images/
+│       └─ my_photo.jpeg
 ├─ index.html
 └─ README.md
 ```
