@@ -1,6 +1,6 @@
 # Yael Karat - Portfolio Website
 
-![My photo](./images\my_photo.jpeg)
+[My photo](./images\my_photo.jpeg)
 
 ---
 
