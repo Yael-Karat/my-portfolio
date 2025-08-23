@@ -4,9 +4,9 @@
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Website
 
-[View Live Site](https://yael-karat.github.io/my-portfolio/)
+[View Live Website](https://yaelkarat.netlify.app)
 
 
 ---
