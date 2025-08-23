@@ -1,36 +1,270 @@
-:root { --glass: 255, 255, 255; }
-html, body { height: 100%; }
-body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+/* ==============================
+   Fonts & Base
+============================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-.bg-animated {
-  background: radial-gradient(1200px 700px at 10% -10%, rgba(59,130,246,0.25), transparent),
-              radial-gradient(1000px 600px at 110% 10%, rgba(236,72,153,0.25), transparent),
-              radial-gradient(900px 500px at 50% 120%, rgba(34,197,94,0.25), transparent),
-              linear-gradient(180deg, #0b1020, #0e1328 40%, #0b1020);
-  background-attachment: fixed;
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ==============================
+   Light & Dark Mode
+============================== */
+html.light, body.light {
+  background-color: #ffffff;
+  color: #0f172a; /* darker for better contrast */
+}
+
+html.dark, body.dark {
+  background-color: #0f172a; /* slate-900 */
+  color: #f8fafc;           /* slate-50 */
+}
+
+/* ==============================
+   Headings & Typography
+============================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  line-height: 1.2;
+  color: inherit;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.7;
+  color: inherit;
+}
+
+/* --- Force good contrast for light mode where Tailwind classes were too light --- */
+html.light #about p,
+html.light #about .text-slate-300\/90,
+html.light #about .text-slate-300\/80,
+html.light #about .text-slate-300,
+html.light #about .text-slate-200\/90,
+html.light #about .text-slate-200,
+html.light #contact p,
+html.light #contact .text-slate-300\/90,
+html.light #contact .text-slate-300\/80,
+html.light #contact .text-slate-300,
+html.light #contact .text-slate-200\/90,
+html.light #contact .text-slate-200,
+html.light #skills .text-slate-300\/90,
+html.light #skills .text-slate-300\/80,
+html.light #skills .text-slate-300 {
+  color: #334155 !important; /* slate-700 */
+}
+
+/* Placeholder contrast */
+html.light input::placeholder,
+html.light textarea::placeholder { color: #64748b; } /* slate-500 */
+
+html.dark input::placeholder,
+html.dark textarea::placeholder { color: #94a3b8; }  /* slate-400 */
+
+/* ==============================
+   Buttons
+============================== */
+button, .btn-primary, .btn-glass {
+  font-weight: 600;
+  border-radius: 1rem;
+  padding: 0.625rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+}
+
+html.dark button, html.dark .btn-primary, html.dark .btn-glass {
+  background-color: rgba(30,41,59,0.85); /* slate-800/85 */
+  color: #f8fafc;
+}
+
+button:hover, .btn-primary:hover, .btn-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   Glass / Card
+============================== */
+.glass {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+html.light .glass {
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(180,180,180,0.35);
+}
+
+html.dark .glass {
+  background-color: rgba(30, 41, 59, 0.75);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ==============================
+   Hero & Images
+============================== */
+.hero-image {
+  border-radius: 1.5rem;
+  object-fit: cover;
+  width: 100%;
+  max-height: 500px;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.03);
+}
+
+/* ==============================
+   Forms & Inputs
+============================== */
+input, textarea {
+  border-radius: 1rem;
+  padding: 0.625rem 1rem;
+  border: 1px solid #d1d5db;
+  background-color: rgba(255,255,255,0.9);
+  transition: all 0.3s ease;
+  width: 100%;
+  color: #0f172a;
+}
+
+html.dark input, html.dark textarea {
+  background-color: rgba(30,41,59,0.8);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #f8fafc;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #6366F1;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.35);
+}
+
+/* ==============================
+   Grid & Layout
+============================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 5rem 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 1024px) {
+  #about .lg\:col-span-5 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ==============================
+   Icons
+============================== */
+i[data-lucide] {
+  vertical-align: middle;
+  transition: color 0.3s, transform 0.3s;
+  color: inherit;
+}
+
+/* ==============================
+   Links
+============================== */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #6366F1;
+}
+
+/* ==============================
+   Blockquote & HR
+============================== */
+blockquote {
+  border-left: 4px solid #6366F1;
+  padding-left: 1rem;
+  color: #374151;
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
+
+/* ==============================
+   Animated Background Blobs
+============================== */
 .blob {
-  position: absolute; filter: blur(60px); opacity: .55; mix-blend-mode: screen; border-radius: 9999px;
-  animation: float 16s ease-in-out infinite;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.35;
+  animation: blobMove 20s infinite;
+  z-index: -1;
 }
-.blob:nth-child(1){ width: 36rem; height: 36rem; left: -6rem; top: -6rem; background: #2563eb; }
-.blob:nth-child(2){ width: 28rem; height: 28rem; right: -4rem; top: 6rem; background: #e11d48; animation-duration: 18s; }
-.blob:nth-child(3){ width: 30rem; height: 30rem; left: 30%; bottom: -8rem; background: #10b981; animation-duration: 22s; }
 
-@keyframes float { 0%,100%{transform:translateY(0) translateX(0) scale(1);} 50%{transform:translateY(-20px) translateX(10px) scale(1.05);} }
+html.dark .blob {
+  opacity: 0.55;
+}
 
-.glass { background: rgba(var(--glass), 0.06); backdrop-filter: saturate(150%) blur(14px); border: 1px solid rgba(255,255,255,0.08); }
-.glass-dark { background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(248, 250, 252, 0.05); }
-.soft-shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+@keyframes blobMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 50px) scale(1.2); }
+}
 
-.card-gradient-hover { background-size: 200% 200%; transition: transform 0.3s ease, background-position 0.6s ease; }
-.card-gradient-hover:hover { transform: translateY(-6px) scale(1.02); background-position: right center; }
-.card-gradient-animated { background: linear-gradient(135deg, #2563eb, #e11d48, #10b981); background-size: 300% 300%; transition: transform 0.3s ease; }
-.card-gradient-animated:hover { transform: translateY(-6px) scale(1.02); animation: gradientShift 3s ease infinite; }
-@keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+/* ==============================
+   Misc / Helpers
+============================== */
+.soft-shadow {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
 
-.btn-primary { @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 bg-indigo-600 text-white hover:bg-indigo-500; }
-.btn-glass { @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium transition transform hover:-translate-y-0.5 active:translate-y-0 border border-white/20 text-white/90 hover:text-white bg-white/5 backdrop-blur; }
-
-.tag { @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs border border-white/15 text-white/80 bg-white/5; }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 0.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
