@@ -8,6 +8,9 @@ html, body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -268,3 +271,14 @@ html.dark .blob {
 .mt-2 { margin-top: 0.5rem; }
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
+
+/* ==============================
+    Mobile menu (hidden by default, slides in when active)
+============================== */
+#mobile-menu {
+  max-width: 80%;
+}
+
+#mobile-menu.active {
+  transform: translateX(0);
+}

@@ -1,7 +1,7 @@
 // ------------------ THEME TOGGLE ------------------
 const themeToggleBtn = document.getElementById("theme-toggle");
 const htmlEl = document.documentElement;
-const themeIconContainer = document.getElementById("theme-icon"); // <span> container for SVG
+const themeIconContainer = document.getElementById("theme-icon");
 
 function renderThemeIcon(name) {
   if (!themeIconContainer || !window.lucide || !lucide.icons || !lucide.icons[name]) return;
@@ -58,6 +58,32 @@ window.addEventListener("DOMContentLoaded", () => {
   if (window.lucide && lucide.createIcons) lucide.createIcons();
   renderThemeIcon(htmlEl.classList.contains("dark") ? "moon" : "sun");
 });
+
+// ------------------ Mobile Menu ------------------
+const menuToggle = document.getElementById("menu-toggle");
+const menuClose = document.getElementById("menu-close");
+const mobileMenu = document.getElementById("mobile-menu");
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+  });
+}
+
+if (menuClose && mobileMenu) {
+  menuClose.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+}
+
+// Close menu when clicking a link
+const mobileLinks = mobileMenu?.querySelectorAll("a");
+mobileLinks?.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+});
+
 
 // ------------------ GitHub Repos ------------------
 async function loadRepos() {
