@@ -57,20 +57,26 @@
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
 
-          <!-- Theme toggle button -->
-          <button id="theme-toggle"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-700/70 backdrop-blur transition transform hover:-translate-y-0.5 active:translate-y-0"
-            title="Toggle theme">
-            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-amber-500 dark:hidden" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 4.5a1 1 0 0 1 1-1h.01a1 1 0 1 1-2 0h.01a1 1 0 0 1 1 1zm6.364 1.636a1 1 0 0 1 1.414 1.414l-.007.007a1 1 0 1 1-1.414-1.414l.007-.007zM19.5 12a1 1 0 0 1 1-1v.01a1 1 0 1 1 0 2V13a1 1 0 0 1-1-1zm-1.636 6.364a1 1 0 0 1 1.414-1.414l.007.007a1 1 0 1 1-1.414 1.414l-.007-.007zM12 19.5a1 1 0 0 1-1-1h.01a1 1 0 1 1 2 0H13a1 1 0 0 1-1 1zm-6.364-1.636a1 1 0 0 1-1.414-1.414l.007-.007a1 1 0 1 1 1.414 1.414l-.007.007zM4.5 12a1 1 0 0 1-1 1v-.01a1 1 0 1 1 0-2V11a1 1 0 0 1 1 1zm1.636-6.364a1 1 0 0 1-1.414-1.414l.007-.007a1 1 0 1 1 1.414 1.414l-.007.007zM12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7z"/>
-            </svg>
-            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-blue-400 hidden dark:block" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79z"/>
-            </svg>
-            <span class="hidden sm:inline" data-theme-label>Theme</span>
-          </button>
+         <!-- Theme toggle button -->
+        <button id="theme-toggle"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-medium border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-700/70 backdrop-blur transition transform hover:-translate-y-0.5 active:translate-y-0"
+          title="Toggle theme">
+
+          <!-- Moon icon (show in light mode, hide in dark) -->
+          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-blue-400 dark:hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79z"/>
+          </svg>
+
+          <!-- Sun icon (show in dark mode, hide in light) -->
+          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-amber-500 hidden dark:block" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+
+          <span class="hidden sm:inline" data-theme-label>Theme</span>
+        </button>
         </div>
       </div>
     </nav>

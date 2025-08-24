@@ -12,11 +12,11 @@ function renderThemeIcon(name) {
   const icon = themeIconContainer.querySelector("svg");
   if (icon) {
     if (htmlEl.classList.contains("dark")) {
-      icon.classList.add("text-slate-200");
-      icon.classList.remove("text-amber-500");
-    } else {
       icon.classList.add("text-amber-500");
       icon.classList.remove("text-slate-200");
+    } else {
+      icon.classList.add("text-blue-400");
+      icon.classList.remove("text-amber-500");
     }
   }
 }
@@ -30,13 +30,13 @@ function applyTheme(theme) {
   if (theme === "dark") {
     htmlEl.classList.add("dark");
     htmlEl.classList.remove("light");
-    renderThemeIcon("moon");
-    setThemeLabel("Dark");
+    renderThemeIcon("sun");
+    setThemeLabel("Light");
   } else {
     htmlEl.classList.add("light");
     htmlEl.classList.remove("dark");
-    renderThemeIcon("sun");
-    setThemeLabel("Light");
+    renderThemeIcon("moon");
+    setThemeLabel("Dark");
   }
   localStorage.setItem("theme", theme);
 }
